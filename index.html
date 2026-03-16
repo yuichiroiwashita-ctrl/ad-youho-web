@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,24 +10,32 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --green:        #2BAE7E;
-      --green-dark:   #1e8e64;
-      --green-light:  #e8f7f2;
-      --teal-grad:    linear-gradient(135deg, #d0f0e8 0%, #e8f7f2 60%, #f5fbf8 100%);
-      --navy:         #1a3040;
-      --text:         #2c3e35;
-      --text-light:   #5a6e65;
-      --border:       #d8ece5;
-      --white:        #ffffff;
-      --bg:           #f9fdfb;
-      --radius:       8px;
-      --radius-lg:    16px;
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
-    html { scroll-behavior: smooth; }
+    :root {
+      --green: #2BAE7E;
+      --green-dark: #1e8e64;
+      --green-light: #e8f7f2;
+      --teal-grad: linear-gradient(135deg, #d0f0e8 0%, #e8f7f2 60%, #f5fbf8 100%);
+      --navy: #1a3040;
+      --text: #2c3e35;
+      --text-light: #5a6e65;
+      --border: #d8ece5;
+      --white: #ffffff;
+      --bg: #f9fdfb;
+      --radius: 8px;
+      --radius-lg: 16px;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       font-family: 'Noto Sans JP', sans-serif;
@@ -47,7 +56,7 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      box-shadow: 0 2px 12px rgba(0,0,0,.06);
+      box-shadow: 0 2px 12px rgba(0, 0, 0, .06);
     }
 
     .logo {
@@ -56,13 +65,18 @@
       gap: 10px;
       text-decoration: none;
     }
+
     .logo-icon {
-      width: 38px; height: 38px;
+      width: 38px;
+      height: 38px;
       background: var(--green-light);
       border-radius: 10px;
-      display: flex; align-items: center; justify-content: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       font-size: 20px;
     }
+
     .logo-text {
       font-size: 1.25rem;
       font-weight: 700;
@@ -75,16 +89,24 @@
       align-items: center;
       gap: 20px;
     }
+
     .header-nav {
-      display: flex; gap: 24px;
+      display: flex;
+      gap: 24px;
       list-style: none;
     }
+
     .header-nav a {
-      font-size: .9rem; font-weight: 500;
-      color: var(--text-light); text-decoration: none;
+      font-size: .9rem;
+      font-weight: 500;
+      color: var(--text-light);
+      text-decoration: none;
       transition: color .2s;
     }
-    .header-nav a:hover { color: var(--green); }
+
+    .header-nav a:hover {
+      color: var(--green);
+    }
 
     .btn-outline {
       display: inline-block;
@@ -93,31 +115,40 @@
       background: transparent;
       border-radius: 6px;
       padding: 8px 22px;
-      font-size: .9rem; font-weight: 700;
+      font-size: .9rem;
+      font-weight: 700;
       text-decoration: none;
       transition: background .2s, color .2s;
       white-space: nowrap;
     }
+
     .btn-outline:hover {
-      background: var(--green); color: var(--white);
+      background: var(--green);
+      color: var(--white);
     }
+
     .btn-primary {
       display: inline-block;
       background: var(--green);
       color: var(--white);
       border-radius: 8px;
       padding: 14px 36px;
-      font-size: 1rem; font-weight: 700;
-      text-decoration: none; border: none; cursor: pointer;
+      font-size: 1rem;
+      font-weight: 700;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
       transition: background .2s, transform .15s, box-shadow .15s;
       white-space: nowrap;
-      box-shadow: 0 4px 16px rgba(43,174,126,.3);
+      box-shadow: 0 4px 16px rgba(43, 174, 126, .3);
     }
+
     .btn-primary:hover {
       background: var(--green-dark);
       transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(43,174,126,.4);
+      box-shadow: 0 8px 24px rgba(43, 174, 126, .4);
     }
+
     .btn-primary-lg {
       padding: 18px 52px;
       font-size: 1.05rem;
@@ -146,7 +177,8 @@
       color: var(--green);
       border: 1.5px solid var(--green);
       border-radius: 4px;
-      font-size: .78rem; font-weight: 700;
+      font-size: .78rem;
+      font-weight: 700;
       padding: 4px 14px;
       margin-bottom: 18px;
       letter-spacing: .04em;
@@ -160,6 +192,7 @@
       margin-bottom: 20px;
       letter-spacing: -.01em;
     }
+
     .hero h1 .hl {
       color: var(--green);
     }
@@ -184,16 +217,21 @@
       position: relative;
       overflow: hidden;
     }
+
     .hero-image img {
-      width: 100%; height: 100%;
+      width: 100%;
+      height: 100%;
       object-fit: cover;
       display: block;
     }
+
     /* Gradient overlay on left edge of photo */
     .hero-image::before {
       content: '';
       position: absolute;
-      top: 0; left: 0; bottom: 0;
+      top: 0;
+      left: 0;
+      bottom: 0;
       width: 80px;
       background: linear-gradient(90deg, #e8f7f2, transparent);
       z-index: 1;
@@ -202,26 +240,36 @@
 
     /* Photo placeholder if image fails */
     .hero-photo-fallback {
-      width: 100%; height: 100%; min-height: 480px;
+      width: 100%;
+      height: 100%;
+      min-height: 480px;
       background: linear-gradient(135deg, #b8eada 0%, #d4f4e8 50%, #c8eddf 100%);
-      display: flex; align-items: center; justify-content: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       font-size: 8rem;
     }
 
     /* ===== SECTION SHARED ===== */
     .section-label {
-      font-size: .8rem; font-weight: 700;
-      color: var(--green); letter-spacing: .08em;
+      font-size: .8rem;
+      font-weight: 700;
+      color: var(--green);
+      letter-spacing: .08em;
       text-transform: uppercase;
       margin-bottom: 8px;
     }
+
     .section-title-plain {
-      font-size: 1.6rem; font-weight: 900;
+      font-size: 1.6rem;
+      font-weight: 900;
       color: var(--navy);
       margin-bottom: 10px;
     }
+
     .section-sub {
-      font-size: .9rem; color: var(--text-light);
+      font-size: .9rem;
+      color: var(--text-light);
       margin-bottom: 40px;
     }
 
@@ -230,13 +278,22 @@
       background: var(--white);
       padding: 72px 32px;
     }
-    .points-inner { max-width: 1000px; margin: 0 auto; }
-    .points-head { margin-bottom: 44px; }
+
+    .points-inner {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .points-head {
+      margin-bottom: 44px;
+    }
+
     .points-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
       gap: 24px;
     }
+
     .point-card {
       border: 1.5px solid var(--border);
       border-radius: var(--radius-lg);
@@ -244,28 +301,39 @@
       background: var(--white);
       transition: border-color .2s, box-shadow .2s, transform .2s;
     }
+
     .point-card:hover {
       border-color: var(--green);
-      box-shadow: 0 8px 32px rgba(43,174,126,.12);
+      box-shadow: 0 8px 32px rgba(43, 174, 126, .12);
       transform: translateY(-4px);
     }
+
     .point-num {
-      width: 36px; height: 36px;
+      width: 36px;
+      height: 36px;
       border-radius: 50%;
       background: var(--green);
       color: #fff;
-      font-size: .85rem; font-weight: 900;
-      display: flex; align-items: center; justify-content: center;
+      font-size: .85rem;
+      font-weight: 900;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       margin-bottom: 14px;
     }
+
     .point-card h3 {
-      font-size: .98rem; font-weight: 700;
+      font-size: .98rem;
+      font-weight: 700;
       color: var(--navy);
       margin-bottom: 8px;
       line-height: 1.5;
     }
+
     .point-card p {
-      font-size: .84rem; color: var(--text-light); line-height: 1.7;
+      font-size: .84rem;
+      color: var(--text-light);
+      line-height: 1.7;
     }
 
     /* ===== MAIN CONTENT (form + flow) ===== */
@@ -273,10 +341,16 @@
       background: var(--bg);
       padding: 72px 32px;
     }
+
     .main-content-inner {
-      max-width: 1040px; margin: 0 auto;
+      max-width: 1040px;
+      margin: 0 auto;
     }
-    .main-content-head { margin-bottom: 40px; }
+
+    .main-content-head {
+      margin-bottom: 40px;
+    }
+
     .content-grid {
       display: grid;
       grid-template-columns: 1.15fr 1fr;
@@ -290,40 +364,62 @@
       border-radius: var(--radius-lg);
       border: 1.5px solid var(--border);
       overflow: hidden;
-      box-shadow: 0 4px 24px rgba(0,0,0,.06);
+      box-shadow: 0 4px 24px rgba(0, 0, 0, .06);
     }
+
     .form-card-head {
       background: var(--green);
       padding: 18px 28px;
     }
+
     .form-card-head h3 {
-      font-size: 1.05rem; font-weight: 700;
+      font-size: 1.05rem;
+      font-weight: 700;
       color: var(--white);
     }
+
     .form-card-head p {
-      font-size: .8rem; color: rgba(255,255,255,.8);
+      font-size: .8rem;
+      color: rgba(255, 255, 255, .8);
       margin-top: 3px;
     }
-    .form-body { padding: 28px 28px 32px; }
 
-    .form-group { margin-bottom: 16px; }
+    .form-body {
+      padding: 28px 28px 32px;
+    }
+
+    .form-group {
+      margin-bottom: 16px;
+    }
+
     label {
       display: block;
-      font-size: .84rem; font-weight: 700;
-      color: var(--text); margin-bottom: 6px;
+      font-size: .84rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 6px;
     }
+
     label .req {
       display: inline-block;
       background: #e53e3e;
-      color: #fff; font-size: .65rem;
-      padding: 2px 7px; border-radius: 3px;
-      margin-left: 6px; vertical-align: middle;
+      color: #fff;
+      font-size: .65rem;
+      padding: 2px 7px;
+      border-radius: 3px;
+      margin-left: 6px;
+      vertical-align: middle;
     }
+
     label .opt {
       display: inline-block;
-      background: #cbd5d0; color: #fff; font-size: .65rem;
-      padding: 2px 7px; border-radius: 3px;
-      margin-left: 6px; vertical-align: middle;
+      background: #cbd5d0;
+      color: #fff;
+      font-size: .65rem;
+      padding: 2px 7px;
+      border-radius: 3px;
+      margin-left: 6px;
+      vertical-align: middle;
     }
 
     input[type="text"],
@@ -334,68 +430,126 @@
       padding: 11px 14px;
       border: 1.5px solid var(--border);
       border-radius: var(--radius);
-      font-family: inherit; font-size: .9rem;
-      color: var(--text); background: var(--white);
+      font-family: inherit;
+      font-size: .9rem;
+      color: var(--text);
+      background: var(--white);
       transition: border-color .2s, box-shadow .2s;
-      appearance: none; -webkit-appearance: none;
+      appearance: none;
+      -webkit-appearance: none;
     }
+
     select {
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%232BAE7E' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
       background-repeat: no-repeat;
       background-position: right 12px center;
       padding-right: 36px;
     }
-    input:focus, select:focus {
+
+    input:focus,
+    select:focus {
       outline: none;
       border-color: var(--green);
-      box-shadow: 0 0 0 3px rgba(43,174,126,.15);
+      box-shadow: 0 0 0 3px rgba(43, 174, 126, .15);
     }
-    input::placeholder { color: #bbb; }
 
-    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    input::placeholder {
+      color: #bbb;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
     .form-divider {
-      border: none; border-top: 1px dashed var(--border); margin: 18px 0;
+      border: none;
+      border-top: 1px dashed var(--border);
+      margin: 18px 0;
     }
 
     .privacy-check {
-      display: flex; align-items: flex-start; gap: 9px;
-      margin-bottom: 20px; font-size: .82rem; color: var(--text-light);
+      display: flex;
+      align-items: flex-start;
+      gap: 9px;
+      margin-bottom: 20px;
+      font-size: .82rem;
+      color: var(--text-light);
     }
+
     .privacy-check input[type="checkbox"] {
-      width: 17px; height: 17px; margin-top: 2px;
-      accent-color: var(--green); flex-shrink: 0;
+      width: 17px;
+      height: 17px;
+      margin-top: 2px;
+      accent-color: var(--green);
+      flex-shrink: 0;
     }
-    .privacy-check a { color: var(--green); text-decoration: underline; }
+
+    .privacy-check a {
+      color: var(--green);
+      text-decoration: underline;
+    }
 
     .submit-btn {
       width: 100%;
       background: var(--green);
-      color: #fff; border: none; border-radius: 8px;
-      padding: 16px; font-family: inherit;
-      font-size: 1rem; font-weight: 700;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 16px;
+      font-family: inherit;
+      font-size: 1rem;
+      font-weight: 700;
       cursor: pointer;
       transition: background .2s, transform .15s, box-shadow .15s;
-      box-shadow: 0 4px 16px rgba(43,174,126,.3);
+      box-shadow: 0 4px 16px rgba(43, 174, 126, .3);
     }
+
     .submit-btn:hover {
       background: var(--green-dark);
       transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(43,174,126,.4);
+      box-shadow: 0 8px 24px rgba(43, 174, 126, .4);
     }
-    .submit-btn:disabled { opacity: .6; cursor: not-allowed; transform: none; box-shadow: none; }
+
+    .submit-btn:disabled {
+      opacity: .6;
+      cursor: not-allowed;
+      transform: none;
+      box-shadow: none;
+    }
 
     .form-free-note {
-      text-align: center; font-size: .76rem; color: var(--text-light);
-      margin-top: 12px; line-height: 1.7;
+      text-align: center;
+      font-size: .76rem;
+      color: var(--text-light);
+      margin-top: 12px;
+      line-height: 1.7;
     }
 
     /* Thank you */
     .thankyou {
-      display: none; text-align: center; padding: 48px 20px;
+      display: none;
+      text-align: center;
+      padding: 48px 20px;
     }
-    .thankyou .ty-icon { font-size: 4rem; margin-bottom: 16px; }
-    .thankyou h3 { font-size: 1.4rem; font-weight: 900; color: var(--green); margin-bottom: 10px; }
-    .thankyou p { font-size: .88rem; color: var(--text-light); }
+
+    .thankyou .ty-icon {
+      font-size: 4rem;
+      margin-bottom: 16px;
+    }
+
+    .thankyou h3 {
+      font-size: 1.4rem;
+      font-weight: 900;
+      color: var(--green);
+      margin-bottom: 10px;
+    }
+
+    .thankyou p {
+      font-size: .88rem;
+      color: var(--text-light);
+    }
 
     /* ===== FLOW ===== */
     .flow-card {
@@ -403,15 +557,24 @@
       border-radius: var(--radius-lg);
       border: 1.5px solid var(--border);
       padding: 28px 28px 32px;
-      box-shadow: 0 4px 24px rgba(0,0,0,.06);
+      box-shadow: 0 4px 24px rgba(0, 0, 0, .06);
     }
+
     .flow-card h3 {
-      font-size: 1rem; font-weight: 700;
-      color: var(--navy); margin-bottom: 24px;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 24px;
       padding-bottom: 14px;
       border-bottom: 2px solid var(--green-light);
     }
-    .flow-steps { display: flex; flex-direction: column; gap: 0; }
+
+    .flow-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
     .flow-step {
       display: flex;
       align-items: flex-start;
@@ -420,23 +583,47 @@
       border-bottom: 1px solid var(--border);
       position: relative;
     }
-    .flow-step:last-child { border-bottom: none; }
-    .step-circle {
-      width: 36px; height: 36px; border-radius: 50%;
-      background: var(--green);
-      color: #fff; font-size: .85rem; font-weight: 900;
-      display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0; margin-top: 2px;
+
+    .flow-step:last-child {
+      border-bottom: none;
     }
-    .step-body h4 { font-size: .92rem; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
-    .step-body p  { font-size: .82rem; color: var(--text-light); line-height: 1.65; }
+
+    .step-circle {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--green);
+      color: #fff;
+      font-size: .85rem;
+      font-weight: 900;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .step-body h4 {
+      font-size: .92rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 4px;
+    }
+
+    .step-body p {
+      font-size: .82rem;
+      color: var(--text-light);
+      line-height: 1.65;
+    }
 
     /* vertical connector line */
     .flow-step:not(:last-child) .step-circle::after {
       content: '';
       position: absolute;
-      left: 17px; top: 52px;
-      width: 2px; height: calc(100% - 36px);
+      left: 17px;
+      top: 52px;
+      width: 2px;
+      height: calc(100% - 36px);
       background: var(--border);
     }
 
@@ -446,26 +633,36 @@
       padding: 56px 32px;
       text-align: center;
     }
+
     .cta-band h2 {
-      font-size: 1.7rem; font-weight: 900;
-      color: var(--white); margin-bottom: 10px;
+      font-size: 1.7rem;
+      font-weight: 900;
+      color: var(--white);
+      margin-bottom: 10px;
     }
+
     .cta-band p {
-      font-size: .95rem; color: rgba(255,255,255,.85);
+      font-size: .95rem;
+      color: rgba(255, 255, 255, .85);
       margin-bottom: 30px;
     }
+
     .cta-band .btn-white {
       display: inline-block;
-      background: var(--white); color: var(--green);
-      border-radius: 10px; padding: 18px 56px;
-      font-size: 1.05rem; font-weight: 700;
+      background: var(--white);
+      color: var(--green);
+      border-radius: 10px;
+      padding: 18px 56px;
+      font-size: 1.05rem;
+      font-weight: 700;
       text-decoration: none;
-      box-shadow: 0 8px 32px rgba(0,0,0,.15);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, .15);
       transition: transform .2s, box-shadow .2s;
     }
+
     .cta-band .btn-white:hover {
       transform: translateY(-3px);
-      box-shadow: 0 14px 40px rgba(0,0,0,.2);
+      box-shadow: 0 14px 40px rgba(0, 0, 0, .2);
     }
 
     /* ===== FOOTER ===== */
@@ -473,54 +670,97 @@
       background: var(--navy);
       padding: 32px 48px;
     }
+
     .footer-inner {
-      max-width: 1040px; margin: 0 auto;
-      display: flex; align-items: center; justify-content: space-between;
-      flex-wrap: wrap; gap: 16px;
+      max-width: 1040px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
     }
+
     .footer-logo {
-      display: flex; align-items: center; gap: 10px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
+
     .footer-logo-icon {
-      width: 32px; height: 32px; background: rgba(255,255,255,.15);
-      border-radius: 8px; display: flex; align-items: center;
-      justify-content: center; font-size: 16px;
+      width: 32px;
+      height: 32px;
+      background: rgba(255, 255, 255, .15);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
     }
+
     .footer-logo-text {
-      font-size: 1rem; font-weight: 700; color: var(--white);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--white);
     }
+
     .footer-nav {
-      display: flex; gap: 6px; align-items: center; flex-wrap: wrap;
+      display: flex;
+      gap: 6px;
+      align-items: center;
+      flex-wrap: wrap;
       list-style: none;
     }
+
     .footer-nav li:not(:last-child)::after {
-      content: '/'; color: rgba(255,255,255,.3); margin-left: 6px;
+      content: '/';
+      color: rgba(255, 255, 255, .3);
+      margin-left: 6px;
     }
+
     .footer-nav a {
-      font-size: .82rem; color: rgba(255,255,255,.65);
-      text-decoration: none; transition: color .2s;
+      font-size: .82rem;
+      color: rgba(255, 255, 255, .65);
+      text-decoration: none;
+      transition: color .2s;
     }
-    .footer-nav a:hover { color: var(--white); }
+
+    .footer-nav a:hover {
+      color: var(--white);
+    }
+
     .footer-copy {
       width: 100%;
-      font-size: .75rem; color: rgba(255,255,255,.4);
-      text-align: right; margin-top: 8px;
+      font-size: .75rem;
+      color: rgba(255, 255, 255, .4);
+      text-align: right;
+      margin-top: 8px;
     }
 
     /* ===== FLOATING CTA (mobile only) ===== */
     .floating-cta {
       display: none;
-      position: fixed; bottom: 16px; left: 50%;
+      position: fixed;
+      bottom: 16px;
+      left: 50%;
       transform: translateX(-50%);
       z-index: 200;
-      width: calc(100% - 32px); max-width: 400px;
+      width: calc(100% - 32px);
+      max-width: 400px;
     }
+
     .floating-cta a {
-      display: block; background: var(--green); color: var(--white);
-      text-align: center; font-family: inherit;
-      font-size: .95rem; font-weight: 700;
-      padding: 16px; border-radius: 10px; text-decoration: none;
-      box-shadow: 0 8px 28px rgba(43,174,126,.45);
+      display: block;
+      background: var(--green);
+      color: var(--white);
+      text-align: center;
+      font-family: inherit;
+      font-size: .95rem;
+      font-weight: 700;
+      padding: 16px;
+      border-radius: 10px;
+      text-decoration: none;
+      box-shadow: 0 8px 28px rgba(43, 174, 126, .45);
     }
 
     /* ===== RESPONSIVE ===== */
@@ -529,351 +769,389 @@
         grid-template-columns: 1fr;
         min-height: auto;
       }
-      .hero-content { padding: 48px 28px; }
-      .hero-image { min-height: 280px; }
-      .content-grid { grid-template-columns: 1fr; }
-      .header-nav { display: none; }
-      .footer-inner { flex-direction: column; align-items: flex-start; }
-      .footer-copy { text-align: left; }
+
+      .hero-content {
+        padding: 48px 28px;
+      }
+
+      .hero-image {
+        min-height: 280px;
+      }
+
+      .content-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .header-nav {
+        display: none;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .footer-copy {
+        text-align: left;
+      }
     }
+
     @media (max-width: 640px) {
-      .form-row { grid-template-columns: 1fr; }
-      .floating-cta { display: block; }
-      .form-body { padding: 20px 18px 24px; }
-      .hero h1 { font-size: 1.55rem; }
-      .points { padding: 52px 20px; }
-      .main-content { padding: 52px 20px; }
-      .cta-band { padding: 48px 20px; }
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      .floating-cta {
+        display: block;
+      }
+
+      .form-body {
+        padding: 20px 18px 24px;
+      }
+
+      .hero h1 {
+        font-size: 1.55rem;
+      }
+
+      .points {
+        padding: 52px 20px;
+      }
+
+      .main-content {
+        padding: 52px 20px;
+      }
+
+      .cta-band {
+        padding: 48px 20px;
+      }
     }
   </style>
 </head>
+
 <body>
 
-<!-- HEADER -->
-<header>
-  <a href="#" class="logo">
-    <div class="logo-icon">🌿</div>
-    <div class="logo-text">幼保ウェブ</div>
-  </a>
-  <div class="header-right">
-    <ul class="header-nav">
-      <li><a href="#points">選ばれる理由</a></li>
-      <li><a href="#flow">ご利用の流れ</a></li>
-    </ul>
-    <a href="#form" class="btn-outline">お問合いせ</a>
-  </div>
-</header>
-
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-content">
-    <div class="hero-tag">幼稚園・こども園・保育園の転職専門</div>
-    <h1>
-      あなたのスキルで、<br>
-      <span class="hl">理想の職場</span>へ。
-    </h1>
-    <p class="hero-desc">
-      幼保ウェブが寄り添いながら転職を全力サポート。<br>
-      「初めて」から始めて、あなたの転職に関する<br>
-      さまざまな不安を解消いたします。
-    </p>
-    <a href="#form" class="btn-primary btn-primary-lg">この園へ転職相談をする（無料）</a>
-    <p class="hero-note">※ 登録・相談・紹介 すべて無料です</p>
-  </div>
-  <div class="hero-image">
-    <img
-      src="https://images.unsplash.com/photo-1587654780291-39c9404d746b?w=800&q=80&fit=crop"
-      alt="保育士と子どもたち"
-      onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-    >
-    <div class="hero-photo-fallback" style="display:none;">👩‍🏫</div>
-  </div>
-</section>
-
-<!-- POINTS -->
-<section class="points" id="points">
-  <div class="points-inner">
-    <div class="points-head">
-      <div class="section-label">REASON</div>
-      <h2 class="section-title-plain">幼保ウェブがご自いてる3ポイント</h2>
+  <!-- HEADER -->
+  <header>
+    <a href="#" class="logo">
+      <div class="logo-icon">🌿</div>
+      <div class="logo-text">幼保ウェブ</div>
+    </a>
+    <div class="header-right">
+      <ul class="header-nav">
+        <li><a href="#points">選ばれる理由</a></li>
+        <li><a href="#flow">ご利用の流れ</a></li>
+      </ul>
+      <a href="#form" class="btn-outline">お問合いせ</a>
     </div>
-    <div class="points-grid">
-      <div class="point-card">
-        <div class="point-num">01</div>
-        <h3>新着求人を<br>毎日更新！</h3>
-        <p>実態調査を踏まえたうえで、じっくり着実に、り顧客実証いたします。</p>
-      </div>
-      <div class="point-card">
-        <div class="point-num">02</div>
-        <h3>新着 01 詳案機能の<br>要望実施多多！</h3>
-        <p>顧問つこ詩て着顧りたい、新採候補者に詳しの含が顔をさいます。</p>
-      </div>
-      <div class="point-card">
-        <div class="point-num">03</div>
-        <h3>ワークデイコクを勝議</h3>
-        <p>確実ご親に当選着例の地域 知藤状況窓定園に関緊隣な後顧する。</p>
-      </div>
-      <div class="point-card">
-        <div class="point-num">04</div>
-        <h3>播薗・薗盤年雑</h3>
-        <p>薗顧後藤館、薗庄に転薗のかた薗覚薗ひごゃエー仲顧トー。</p>
-      </div>
-    </div>
-  </div>
-</section>
+  </header>
 
-<!-- MAIN CONTENT -->
-<section class="main-content" id="form">
-  <div class="main-content-inner">
-    <div class="main-content-head">
-      <div class="section-label">CONTACT</div>
-      <h2 class="section-title-plain">この甲原の詳訓臨るお趣</h2>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-tag">幼稚園・こども園・保育園の転職専門</div>
+      <h1>
+        あなたのスキルで、<br>
+        <span class="hl">理想の職場</span>へ。
+      </h1>
+      <p class="hero-desc">
+        幼保ウェブが寄り添いながら転職を全力サポート。<br>
+        「初めて」から始めて、あなたの転職に関する<br>
+        さまざまな不安を解消いたします。
+      </p>
+      <a href="#form" class="btn-primary btn-primary-lg">この園へ転職相談をする（無料）</a>
+      <p class="hero-note">※ 登録・相談・紹介 すべて無料です</p>
     </div>
-    <div class="content-grid">
+    <div class="hero-image">
+      <img src="https://images.unsplash.com/photo-1587654780291-39c9404d746b?w=800&q=80&fit=crop" alt="保育士と子どもたち"
+        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+      <div class="hero-photo-fallback" style="display:none;">👩‍🏫</div>
+    </div>
+  </section>
 
-      <!-- FORM -->
-      <div class="form-card">
-        <div class="form-card-head">
-          <h3>🌿 無料転職相談フォーム</h3>
-          <p>入力は3分程度。担当者から丁寧にご連絡いたします。</p>
+  <!-- POINTS -->
+  <section class="points" id="points">
+    <div class="points-inner">
+      <div class="points-head">
+        <div class="section-label">REASON</div>
+        <h2 class="section-title-plain">幼保ウェブがご自いてる3ポイント</h2>
+      </div>
+      <div class="points-grid">
+        <div class="point-card">
+          <div class="point-num">01</div>
+          <h3>新着求人を<br>毎日更新！</h3>
+          <p>実態調査を踏まえたうえで、じっくり着実に、り顧客実証いたします。</p>
         </div>
-        <div class="form-body">
+        <div class="point-card">
+          <div class="point-num">02</div>
+          <h3>新着 01 詳案機能の<br>要望実施多多！</h3>
+          <p>顧問つこ詩て着顧りたい、新採候補者に詳しの含が顔をさいます。</p>
+        </div>
+        <div class="point-card">
+          <div class="point-num">03</div>
+          <h3>ワークデイコクを勝議</h3>
+          <p>確実ご親に当選着例の地域 知藤状況窓定園に関緊隣な後顧する。</p>
+        </div>
+        <div class="point-card">
+          <div class="point-num">04</div>
+          <h3>播薗・薗盤年雑</h3>
+          <p>薗顧後藤館、薗庄に転薗のかた薗覚薗ひごゃエー仲顧トー。</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-          <!-- Thank you -->
-          <div class="thankyou" id="thankyou">
-            <div class="ty-icon">🎉</div>
-            <h3>ご登録ありがとうございます！</h3>
-            <p>2〜3営業日以内に担当者よりご連絡いたします。<br>しばらくお待ちください。</p>
+  <!-- MAIN CONTENT -->
+  <section class="main-content" id="form">
+    <div class="main-content-inner">
+      <div class="main-content-head">
+        <div class="section-label">CONTACT</div>
+        <h2 class="section-title-plain">この甲原の詳訓臨るお趣</h2>
+      </div>
+      <div class="content-grid">
+
+        <!-- FORM -->
+        <div class="form-card">
+          <div class="form-card-head">
+            <h3>🌿 無料転職相談フォーム</h3>
+            <p>入力は3分程度。担当者から丁寧にご連絡いたします。</p>
           </div>
+          <div class="form-body">
 
-          <form id="leadForm"
-                onsubmit="handleSubmit(event)">
-
-            <div class="form-group">
-              <label for="name">お名前 <span class="req">必須</span></label>
-              <input type="text" id="name" name="name" placeholder="例：山田 花子" required>
+            <!-- Thank you -->
+            <div class="thankyou" id="thankyou">
+              <div class="ty-icon">🎉</div>
+              <h3>ご登録ありがとうございます！</h3>
+              <p>2〜3営業日以内に担当者よりご連絡いたします。<br>しばらくお待ちください。</p>
             </div>
 
-            <div class="form-group">
-              <label for="email">メールアドレス <span class="req">必須</span></label>
-              <input type="email" id="email" name="email" placeholder="例：hanako@example.com" required>
-            </div>
+            <form id="leadForm" onsubmit="handleSubmit(event)">
 
-            <div class="form-group">
-              <label for="tel">電話番号 <span class="req">必須</span></label>
-              <input type="tel" id="tel" name="tel" placeholder="例：090-1234-5678" required>
-            </div>
-
-            <hr class="form-divider">
-
-            <div class="form-row">
               <div class="form-group">
-                <label for="current_job">現在の職種 <span class="opt">任意</span></label>
-                <select id="current_job" name="current_job">
+                <label for="name">お名前 <span class="req">必須</span></label>
+                <input type="text" id="name" name="name" placeholder="例：山田 花子" required>
+              </div>
+
+              <div class="form-group">
+                <label for="email">メールアドレス <span class="req">必須</span></label>
+                <input type="email" id="email" name="email" placeholder="例：hanako@example.com" required>
+              </div>
+
+              <div class="form-group">
+                <label for="tel">電話番号 <span class="req">必須</span></label>
+                <input type="tel" id="tel" name="tel" placeholder="例：090-1234-5678" required>
+              </div>
+
+              <hr class="form-divider">
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="current_job">現在の職種 <span class="opt">任意</span></label>
+                  <select id="current_job" name="current_job">
+                    <option value="">選択してください</option>
+                    <option>保育士</option>
+                    <option>幼稚園教諭</option>
+                    <option>保育教諭</option>
+                    <option>看護師（保育園勤務）</option>
+                    <option>調理師（保育施設勤務）</option>
+                    <option>その他</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="qualification">保有資格 <span class="opt">任意</span></label>
+                  <select id="qualification" name="qualification">
+                    <option value="">選択してください</option>
+                    <option>保育士資格</option>
+                    <option>幼稚園教諭免許（一種）</option>
+                    <option>幼稚園教諭免許（二種）</option>
+                    <option>幼稚園教諭免許（専修）</option>
+                    <option>保育士資格＋幼稚園教諭免許</option>
+                    <option>取得見込み</option>
+                    <option>資格なし</option>
+                    <option>その他</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="desired_job">希望職種 <span class="opt">任意</span></label>
+                  <select id="desired_job" name="desired_job">
+                    <option value="">選択してください</option>
+                    <option>正社員</option>
+                    <option>パート・アルバイト</option>
+                    <option>どちらでも可</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="change_timing">希望転職時期 <span class="opt">任意</span></label>
+                  <select id="change_timing" name="change_timing">
+                    <option value="">選択してください</option>
+                    <option>1ヶ月以内</option>
+                    <option>3ヶ月以内</option>
+                    <option>半年以内</option>
+                    <option>1年以内</option>
+                    <option>まだ決まっていない</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="desired_salary">希望年収 <span class="opt">任意</span></label>
+                <select id="desired_salary" name="desired_salary">
                   <option value="">選択してください</option>
-                  <option>保育士</option>
-                  <option>幼稚園教諭</option>
-                  <option>保育教諭</option>
-                  <option>看護師（保育園勤務）</option>
-                  <option>調理師（保育施設勤務）</option>
-                  <option>その他</option>
+                  <option>200万円未満</option>
+                  <option>200〜250万円</option>
+                  <option>250〜300万円</option>
+                  <option>300〜350万円</option>
+                  <option>350万円以上</option>
+                  <option>応相談</option>
                 </select>
               </div>
-              <div class="form-group">
-                <label for="qualification">保有資格 <span class="opt">任意</span></label>
-                <select id="qualification" name="qualification">
-                  <option value="">選択してください</option>
-                  <option>保育士資格</option>
-                  <option>幼稚園教諭免許（一種）</option>
-                  <option>幼稚園教諭免許（二種）</option>
-                  <option>幼稚園教諭免許（専修）</option>
-                  <option>保育士資格＋幼稚園教諭免許</option>
-                  <option>取得見込み</option>
-                  <option>資格なし</option>
-                  <option>その他</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <label for="desired_job">希望職種 <span class="opt">任意</span></label>
-                <select id="desired_job" name="desired_job">
-                  <option value="">選択してください</option>
-                  <option>正社員</option>
-                  <option>パート・アルバイト</option>
-                  <option>どちらでも可</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <label for="change_timing">希望転職時期 <span class="opt">任意</span></label>
-                <select id="change_timing" name="change_timing">
-                  <option value="">選択してください</option>
-                  <option>1ヶ月以内</option>
-                  <option>3ヶ月以内</option>
-                  <option>半年以内</option>
-                  <option>1年以内</option>
-                  <option>まだ決まっていない</option>
-                </select>
-              </div>
-            </div>
 
-            <div class="form-group">
-              <label for="desired_salary">希望年収 <span class="opt">任意</span></label>
-              <select id="desired_salary" name="desired_salary">
-                <option value="">選択してください</option>
-                <option>200万円未満</option>
-                <option>200〜250万円</option>
-                <option>250〜300万円</option>
-                <option>300〜350万円</option>
-                <option>350万円以上</option>
-                <option>応相談</option>
-              </select>
-            </div>
+              <hr class="form-divider">
 
-            <hr class="form-divider">
-
-            <div class="privacy-check">
-              <input type="checkbox" id="privacy" name="privacy" required>
-              <label for="privacy" style="font-weight:400; margin:0;">
-                <a href="privacy.html" target="_blank">プライバシーポリシー</a>に同意します
-              </label>
-            </div>
-
-            <button type="submit" class="submit-btn" id="submitBtn">
-              🌿 無料で転職相談を申し込む →
-            </button>
-
-            <p class="form-free-note">登録・相談・紹介 すべて無料です</p>
-          </form>
-        </div>
-      </div>
-
-      <!-- FLOW -->
-      <div id="flow">
-        <div class="section-label" style="margin-bottom:8px;">FLOW</div>
-        <h2 class="section-title-plain" style="margin-bottom:24px;">弃蒻から入拔込圭のるここ</h2>
-        <div class="flow-card">
-          <h3>幼保ウェブに詳細聞きられる</h3>
-          <div class="flow-steps">
-            <div class="flow-step">
-              <div class="step-circle">1</div>
-              <div class="step-body">
-                <h4>📝 フォームに登録</h4>
-                <p>このページのフォームからお名前・連絡先などをご入力ください。</p>
+              <div class="privacy-check">
+                <input type="checkbox" id="privacy" name="privacy" required>
+                <label for="privacy" style="font-weight:400; margin:0;">
+                  <a href="privacy.html" target="_blank">プライバシーポリシー</a>に同意します
+                </label>
               </div>
-            </div>
-            <div class="flow-step">
-              <div class="step-circle">2</div>
-              <div class="step-body">
-                <h4>📞 担当者からご連絡</h4>
-                <p>2〜3営業日以内に担当者よりメールまたはお電話でご連絡します。</p>
-              </div>
-            </div>
-            <div class="flow-step">
-              <div class="step-circle">3</div>
-              <div class="step-body">
-                <h4>💬 無料転職相談（面談）</h4>
-                <p>ご希望の条件をヒアリングし、あなたに合った求人をご提案します。</p>
-              </div>
-            </div>
-            <div class="flow-step">
-              <div class="step-circle">4</div>
-              <div class="step-body">
-                <h4>🌿 入職・新しいスタート！</h4>
-                <p>内定獲得〜入職まで一貫してサポート。転職後も安心です。</p>
-              </div>
-            </div>
+
+              <button type="submit" class="submit-btn" id="submitBtn">
+                🌿 無料で転職相談を申し込む →
+              </button>
+
+              <p class="form-free-note">登録・相談・紹介 すべて無料です</p>
+            </form>
           </div>
         </div>
 
-        <div style="margin-top:24px; padding: 18px 22px; background: var(--green-light); border-radius: var(--radius-lg); border-left: 4px solid var(--green);">
-          <p style="font-size:.84rem; color: var(--text); line-height:1.7;">
-            園名「幼保ウェブ」でら覚具薗・卻終覧いたます
-          </p>
+        <!-- FLOW -->
+        <div id="flow">
+          <div class="section-label" style="margin-bottom:8px;">FLOW</div>
+          <h2 class="section-title-plain" style="margin-bottom:24px;">弃蒻から入拔込圭のるここ</h2>
+          <div class="flow-card">
+            <h3>幼保ウェブに詳細聞きられる</h3>
+            <div class="flow-steps">
+              <div class="flow-step">
+                <div class="step-circle">1</div>
+                <div class="step-body">
+                  <h4>📝 フォームに登録</h4>
+                  <p>このページのフォームからお名前・連絡先などをご入力ください。</p>
+                </div>
+              </div>
+              <div class="flow-step">
+                <div class="step-circle">2</div>
+                <div class="step-body">
+                  <h4>📞 担当者からご連絡</h4>
+                  <p>2〜3営業日以内に担当者よりメールまたはお電話でご連絡します。</p>
+                </div>
+              </div>
+              <div class="flow-step">
+                <div class="step-circle">3</div>
+                <div class="step-body">
+                  <h4>💬 無料転職相談（面談）</h4>
+                  <p>ご希望の条件をヒアリングし、あなたに合った求人をご提案します。</p>
+                </div>
+              </div>
+              <div class="flow-step">
+                <div class="step-circle">4</div>
+                <div class="step-body">
+                  <h4>🌿 入職・新しいスタート！</h4>
+                  <p>内定獲得〜入職まで一貫してサポート。転職後も安心です。</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="margin-top:24px; padding: 18px 22px; background: var(--green-light); border-radius: var(--radius-lg); border-left: 4px solid var(--green);">
+            <p style="font-size:.84rem; color: var(--text); line-height:1.7;">
+              園名「幼保ウェブ」でら覚具薗・卻終覧いたます
+            </p>
+          </div>
+
+          <div style="margin-top:20px;">
+            <a href="#form" class="btn-primary" style="display:block; text-align:center; padding:16px;">
+              幼稚二願に詳細聞きられる →
+            </a>
+          </div>
         </div>
 
-        <div style="margin-top:20px;">
-          <a href="#form" class="btn-primary" style="display:block; text-align:center; padding:16px;">
-            幼稚二願に詳細聞きられる →
-          </a>
-        </div>
       </div>
-
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- CTA BAND -->
-<section class="cta-band">
-  <h2>まずは無料でご相談ください</h2>
-  <p>保育士・幼稚園教諭の転職なら幼保ウェブへ。専任コンサルタントが全力サポートします。</p>
-  <a href="#form" class="btn-white">無料で転職相談する →</a>
-</section>
+  <!-- CTA BAND -->
+  <section class="cta-band">
+    <h2>まずは無料でご相談ください</h2>
+    <p>保育士・幼稚園教諭の転職なら幼保ウェブへ。専任コンサルタントが全力サポートします。</p>
+    <a href="#form" class="btn-white">無料で転職相談する →</a>
+  </section>
 
-<!-- FOOTER -->
-<footer>
-  <div class="footer-inner">
-    <div class="footer-logo">
-      <div class="footer-logo-icon">🌿</div>
-      <div class="footer-logo-text">幼保ウェブ</div>
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <div class="footer-logo-icon">🌿</div>
+        <div class="footer-logo-text">幼保ウェブ</div>
+      </div>
+      <ul class="footer-nav">
+        <li><a href="#points">選ばれる理由</a></li>
+        <li><a href="#flow">ご利用の流れ</a></li>
+        <li><a href="privacy.html">プライバシーポリシー</a></li>
+      </ul>
+      <p class="footer-copy">© 2025 幼保ウェブ. All rights reserved.</p>
     </div>
-    <ul class="footer-nav">
-      <li><a href="#points">選ばれる理由</a></li>
-      <li><a href="#flow">ご利用の流れ</a></li>
-      <li><a href="privacy.html">プライバシーポリシー</a></li>
-    </ul>
-    <p class="footer-copy">© 2025 幼保ウェブ. All rights reserved.</p>
+  </footer>
+
+  <!-- Floating CTA (mobile) -->
+  <div class="floating-cta">
+    <a href="#form">🌿 無料で転職相談する →</a>
   </div>
-</footer>
 
-<!-- Floating CTA (mobile) -->
-<div class="floating-cta">
-  <a href="#form">🌿 無料で転職相談する →</a>
-</div>
+  <script>
+    // ★ GASデプロイ後、下記URLを書き換えてください
+    const GAS_ENDPOINT = 'https://script.google.com/macros/s/AKfycbyJcpRke4sPeccHQhvLPt_2FSzpY47Y3G9xGpN1vvjT-f1QQ5B9dt-0r1SNTkNFk2-f/exec';
 
-<script>
-  // ★ GASデプロイ後、下記URLを書き換えてください
-  const GAS_ENDPOINT = 'https://script.google.com/macros/s/AKfycbyJcpRke4sPeccHQhvLPt_2FSzpY47Y3G9xGpN1vvjT-f1QQ5B9dt-0r1SNTkNFk2-f/exec';
+    async function handleSubmit(e) {
+      e.preventDefault();
+      const form = document.getElementById('leadForm');
+      const btn = document.getElementById('submitBtn');
 
-  async function handleSubmit(e) {
-    e.preventDefault();
-    const form = document.getElementById('leadForm');
-    const btn  = document.getElementById('submitBtn');
+      // URLSearchParams 形式で送信（CORS回避）
+      const fd = new FormData(form);
+      const params = new URLSearchParams();
+      fd.forEach((v, k) => params.append(k, v));
 
-    // フォームデータをオブジェクトに変換
-    const fd = new FormData(form);
-    const payload = {};
-    fd.forEach((v, k) => { payload[k] = v; });
+      btn.disabled = true;
+      btn.textContent = '送信中...';
 
-    btn.disabled = true;
-    btn.textContent = '送信中...';
-
-    try {
-      const res = await fetch(GAS_ENDPOINT, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload)
-      });
-      const json = await res.json();
-      if (json.status === 'ok') {
+      try {
+        // no-cors モード：レスポンスは読めないが送信は届く
+        await fetch(GAS_ENDPOINT, {
+          method: 'POST',
+          mode: 'no-cors',
+          body: params
+        });
+        // no-cors では常にopaqueレスポンスのため、送信後は成功とみなす
         form.style.display = 'none';
         document.getElementById('thankyou').style.display = 'block';
         if (typeof gtag === 'function') {
           gtag('event', 'conversion', { 'send_to': 'AW-XXXXXXXXX/XXXXXXXXX' });
         }
-      } else { throw new Error(json.message || 'error'); }
-    } catch (err) {
-      btn.disabled = false;
-      btn.textContent = '🌿 無料で転職相談を申し込む →';
-      alert('送信に失敗しました。しばらく経ってから再度お試しください。\n(' + err.message + ')');
+      } catch (err) {
+        btn.disabled = false;
+        btn.textContent = '🌿 無料で転職相談を申し込む →';
+        alert('送信に失敗しました。しばらく経ってから再度お試しください。\n(' + err.message + ')');
+      }
     }
-  }
 
-  document.querySelectorAll('a[href^="#"]').forEach(a => {
-    a.addEventListener('click', e => {
-      e.preventDefault();
-      const t = document.querySelector(a.getAttribute('href'));
-      if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        e.preventDefault();
+        const t = document.querySelector(a.getAttribute('href'));
+        if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
     });
-  });
-</script>
+  </script>
 </body>
+
 </html>
